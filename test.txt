@@ -1,0 +1,87 @@
+<div class="header">
+        <div class="img"><img src="/img/facebook.png" alt=""></div>
+        <div class="form-1">
+            <form action="" method="POST">
+            <label for="">Email or Phone</label>
+            <input placeholder="Email" type="email" name="email" id="">
+            <input type="checkbox" id="Keep">
+            <label for="Keep">Keep me Logged in</label>
+            <label for="">Password</label>
+            <input type="password" name="password" id="password">
+            <a href="">Forgotten your password</a>
+        </form>
+        </div>
+    </div>
+    <div class="body">
+        <div class="fb-body">Facebook helps you connect and share with the <br.>people in your life.</br.></div>
+        <img src="img/world.png" alt="">
+    </div>
+    <div class="form-2">
+        <h2 class="h2">Create an account</h2>
+        <h4 class="h4">It's free and always will be.</h4>
+        <form action=""  method="post" class="was-validated" id="form-2">
+            <div class="form-group">
+            <input placeholder="First Name" class="form-control" type="text" name="firstname"  id="firstname">
+            <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+            <input placeholder="Last Name" type="text" name="lastname" id="lastname">
+            <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+            <input type="email" name="email" id="email">
+            <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+            <input type="email" name="re-email" id="re-email">
+            <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+            <input type="password" name="password" id="password">
+            <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+            <input type="date" name="date" id="date">
+            <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+            <input type="radio" name="sex" id="male" value="male">
+            <label for="male">Male</label>
+            <span class="form-message"></span>
+            </div>
+            <div class="form-group">
+            <input type="radio" name="sex" id="female" value="female">
+            <label for="female">Female</label>
+            <span class="form-message"></span>
+            </div>
+            
+            <p>By clicking Create an account, you agree to our Terms and that you have read our Data Policy, including our Cookie Use.</p>
+            <input type="submit" value="Create an account" class="btn btn-success">
+        </form>
+        <hr>
+        <p>Create a Page for a celebrity, band or business.</p>
+    </div>
+    <script>
+        Validator({
+            form: '#form-2',
+            errorSelector : 'form-message',
+            rules: [
+                Validator.isRequired('#firstname'),
+                Validator.isRequired('#lastname'),
+                
+                Validator.isEmail('#email'),
+                Validator.isEmail('#re-email'),
+                
+            ]
+        });
+    </script>
+
+
+
+    // lấy các rule của selector
+        var rules = selectorRule[rule.selector];
+        // lặp rule để check
+        for ( var i=0 ; i< rules.length;i++){
+            rules[i](inputElement.value);
+            if(errorMessage) break; // nếu có lỗi dừng
+        }
